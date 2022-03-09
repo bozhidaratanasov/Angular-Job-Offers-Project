@@ -1,0 +1,35 @@
+<header>
+  <div class="mini-navbar-wrapper">
+    <div class="logo-wrapper">
+      <p class="logo"><span class="logo">Job Offers</span></p>
+    </div>
+    <div class="mini-navbar" *ngIf="!isLogged; else logged_navbar">
+      <ul>
+        <li>
+          <a routerLink="login">Login</a>
+        </li>
+        <li>
+          <a routerLink="register">Register</a>
+        </li>
+      </ul>
+    </div>
+    <ng-template #logged_navbar>
+
+      <div class="mini-navbar">
+        <div>Hello, {{ loggedUser.email}}</div>
+        <ul>
+          <li>
+            <a routerLink="login">Home</a>
+          </li>
+          <li>
+            <a routerLink="register">Profile</a>
+          </li>
+          <li>
+            <a (click)="onLogout()" routerLink="login">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+
+  </div>
+</header>

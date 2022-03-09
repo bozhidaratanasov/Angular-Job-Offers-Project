@@ -1,0 +1,8 @@
+<h3>All Offers</h3>
+
+<section>
+  <app-offer-item *ngFor="let offer of offers"
+                  [offer]="offer"
+                  [userRole]="userRole"
+  ></app-offer-item>
+</section>

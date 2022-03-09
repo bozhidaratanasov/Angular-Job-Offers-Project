@@ -1,0 +1,14 @@
+<article>
+  <div>
+    <h3>{{ offer.title }}</h3>
+  </div>
+
+  <p>{{ offer.category }}</p>
+  <p> {{ offer.type }}</p>
+  <p>{{ offer.description }}</p>
+
+  <div *ngIf="userRole === 'user'">
+    <button class="apply-btn">Apply</button>
+    <button class="like-btn">Like</button>
+  </div>
+</article>

@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 3em;
+  margin-right: 3em;
+  
+  app-offer-item {
+    flex-basis: 25%;
+    width: 33%;
+    margin-left: 3.5em;;
+    margin-bottom: 3em;
+    border: 3px dotted lightblue;
+    border-radius: 10px;
+  }
+}
+

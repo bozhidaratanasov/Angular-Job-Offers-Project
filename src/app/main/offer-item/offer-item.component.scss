@@ -1,0 +1,26 @@
+.title-row {
+  display: flex;
+}
+
+h3, p {
+  margin-left: 10px;
+}
+
+.apply-btn {
+  margin-left: 10px;
+  background-color: rgb(0, 200, 255);
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.like-btn {
+  background-color: lightgreen;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.apply-btn, .like-btn {
+  width: 5em;
+}

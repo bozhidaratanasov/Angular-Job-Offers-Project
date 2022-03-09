@@ -1,0 +1,16 @@
+footer {
+  background: rgb(0, 128, 182);
+  background: linear-gradient(0deg, rgba(0, 128, 182, 1) 0%, rgba(0, 128, 182, 1) 35%, rgba(0, 212, 255, 1));
+  margin-top: 1em;
+  margin-left: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 1.2em;
+  font-family: 'Parisienne';
+  text-align: center;
+  
+}

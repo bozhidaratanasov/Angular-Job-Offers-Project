@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "name": "dasdasd",
+      "email": "dsdsdsd@abv.bg",
+      "password": "",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "name": "dasdasd",
+      "email": "dsdsdsd@abv.bg",
+      "password": "",
+      "role": "user",
+      "id": 2
+    },
+    {
+      "name": "bozhidar",
+      "email": "bozhidar@abv.bg",
+      "password": "",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "name": "bozhidar",
+      "email": "bozhidar@abv.bg",
+      "password": "mypass",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "name": "org",
+      "email": "org@abv.bg",
+      "password": "mypass",
+      "role": "organization",
+      "id": 5
+    }
+
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "title": "title1",
+      "category": "cat1",
+      "type": "type1",
+      "description": "desc1"
+    },
+    {
+      "id": 2,
+      "title": "title2",
+      "category": "cat2",
+      "type": "type2",
+      "description": "desc2"
+    },
+    {
+      "id": 1,
+      "title": "title1",
+      "category": "cat1",
+      "type": "type1",
+      "description": "desc1"
+    },
+    {
+      "id": 2,
+      "title": "title2",
+      "category": "cat2",
+      "type": "type2",
+      "description": "desc2"
+    },
+    {
+      "id": 1,
+      "title": "title1",
+      "category": "cat1",
+      "type": "type1",
+      "description": "desc1"
+    },
+    {
+      "id": 2,
+      "title": "title2",
+      "category": "cat2",
+      "type": "type2",
+      "description": "desc2"
+    },
+    {
+      "id": 1,
+      "title": "title1",
+      "category": "cat1",
+      "type": "type1",
+      "description": "desc1"
+    },
+    {
+      "id": 2,
+      "title": "title2",
+      "category": "cat2",
+      "type": "type2",
+      "description": "desc2"
+    }
+  ]
+}
