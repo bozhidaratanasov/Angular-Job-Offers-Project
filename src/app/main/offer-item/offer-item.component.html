@@ -6,9 +6,11 @@
   <p>{{ offer.category }}</p>
   <p> {{ offer.type }}</p>
   <p>{{ offer.description }}</p>
+  <p> Likes: {{offer.likesCount}}</p>
 
   <div *ngIf="userRole === 'user'">
-    <button class="apply-btn">Apply</button>
+    <p class="success" *ngIf="appliedUser">Already applied!</p>
+    <button class="apply-btn" (click)="onApply()" [disabled]="appliedUser">Apply</button>
     <button class="like-btn">Like</button>
   </div>
 </article>

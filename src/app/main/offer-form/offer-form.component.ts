@@ -29,19 +29,19 @@ export class OfferFormComponent implements OnInit {
   }
 
   onSubmit() {
+    let loggedUser = this.userService.getLoggedUser();
+    
     const offer: Offer = {
+      organizationId: loggedUser.id!,
       title: this.formGroup.value.title,
       category: this.formGroup.value.category,
       type: this.formGroup.value.type,
-      description: this.formGroup.value.description
+      description: this.formGroup.value.description,
+      appliedUsers: [],
+      likesCount: 0
     }
 
-    let loggedUser = this.userService.getLoggedUser();
-    loggedUser.myOffers?.push(offer);
-    this.userService.storeUserData(loggedUser);
-
     this.offerService.createOffer$(offer).subscribe();
-    this.userService.updateUser$(loggedUser).subscribe();
 
     this.router.navigate(['offers/dashboard'])
   }

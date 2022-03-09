@@ -1,11 +1,15 @@
-<h1 *ngIf="loggedUser.role === 'user' && loggedUser.myOffers?.length === 0">
+<h1 *ngIf="loggedUser.role === 'user' && offers.length === 0">
   You haven't applied for any offers yet!
 </h1>
-<h1 *ngIf="loggedUser.role === 'organization' && loggedUser.myOffers?.length === 0">
+<h1 *ngIf="loggedUser.role === 'organization' && offers.length === 0">
   You haven't created any offers yet!
 </h1>
 
-<button routerLink="/offers/create">
+<h2 *ngIf="loggedUser.role === 'user' && offers?.length">
+  Offers You Applied To
+</h2>
+
+<button routerLink="/offers/create" *ngIf="loggedUser.role === 'organization'">
   <span>+</span> Create New
 </button>
 

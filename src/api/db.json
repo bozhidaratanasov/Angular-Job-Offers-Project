@@ -14,148 +14,109 @@
       "email": "org@abv.bg",
       "password": "mypass",
       "role": "organization",
-      "myOffers": [
-        {
-          "title": "dsadasdasd",
-          "category": "dsadasdasd",
-          "type": "Part-Time",
-          "description": "dsadsadasd"
-        },
-        {
-          "title": "dsadasd",
-          "category": "dsadsad",
-          "type": "Part-Time",
-          "description": "dasdasd"
-        },
-        {
-          "title": "kkkk",
-          "category": "kkk",
-          "type": "Remote",
-          "description": "kkkk"
-        },
-        {
-          "title": "dads",
-          "category": "asdasd",
-          "type": "Part-Time",
-          "description": "asdasdasd"
-        }
-      ],
+      "myOffers": [],
       "likedOffers": [],
       "id": 2
+    },
+    {
+      "name": "k",
+      "email": "k@abv.bg",
+      "password": "mypass",
+      "role": "user",
+      "myOffers": [],
+      "likedOffers": [],
+      "id": 3
     }
   ],
   "offers": [
     {
-      "id": 1,
-      "title": "title1",
-      "category": "cat1",
-      "type": "type1",
-      "description": "desc1"
+      "organizationId": 2,
+      "title": "kkk",
+      "category": "kk",
+      "type": "kk",
+      "description": "kk",
+      "appliedUsers": [
+        {
+          "name": "Bozhidar",
+          "email": "b@abv.bg",
+          "password": "mypass",
+          "role": "user",
+          "myOffers": [],
+          "likedOffers": [],
+          "id": 1
+        }
+      ],
+      "likesCount": 0,
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "title2",
-      "category": "cat2",
-      "type": "type2",
-      "description": "desc2"
+      "organizationId": 2,
+      "title": "jj",
+      "category": "jj",
+      "type": "jj",
+      "description": "jj",
+      "appliedUsers": [
+        {
+          "name": "Bozhidar",
+          "email": "b@abv.bg",
+          "password": "mypass",
+          "role": "user",
+          "myOffers": [],
+          "likedOffers": [],
+          "id": 1
+        }
+      ],
+      "likesCount": 0,
+      "id": 2
     },
     {
-      "id": 1,
-      "title": "title1",
-      "category": "cat1",
-      "type": "type1",
-      "description": "desc1"
-    },
-    {
-      "id": 2,
-      "title": "title2",
-      "category": "cat2",
-      "type": "type2",
-      "description": "desc2"
-    },
-    {
-      "id": 1,
-      "title": "title1",
-      "category": "cat1",
-      "type": "type1",
-      "description": "desc1"
-    },
-    {
-      "id": 2,
-      "title": "title2",
-      "category": "cat2",
-      "type": "type2",
-      "description": "desc2"
-    },
-    {
-      "id": 1,
-      "title": "title1",
-      "category": "cat1",
-      "type": "type1",
-      "description": "desc1"
-    },
-    {
-      "id": 2,
-      "title": "title2",
-      "category": "cat2",
-      "type": "type2",
-      "description": "desc2"
-    },
-    {
-      "title": "Test",
-      "category": "TestCat",
+      "organizationId": 2,
+      "title": "jj",
+      "category": "jj",
       "type": "Part-Time",
-      "description": "dasdasdasdasd",
+      "description": "jj",
+      "appliedUsers": [
+        {
+          "name": "Bozhidar",
+          "email": "b@abv.bg",
+          "password": "mypass",
+          "role": "user",
+          "myOffers": [],
+          "likedOffers": [],
+          "id": 1
+        }
+      ],
+      "likesCount": 0,
       "id": 3
     },
     {
-      "title": "test2",
-      "category": "test2",
+      "organizationId": 2,
+      "title": "hh",
+      "category": "hh",
       "type": "Part-Time",
-      "description": "test2",
+      "description": "hh",
+      "appliedUsers": [
+        {
+          "name": "Bozhidar",
+          "email": "b@abv.bg",
+          "password": "mypass",
+          "role": "user",
+          "myOffers": [],
+          "likedOffers": [],
+          "id": 1
+        },
+        {
+          "name": "Bozhidar",
+          "email": "b@abv.bg",
+          "password": "mypass",
+          "role": "user",
+          "myOffers": [],
+          "likedOffers": [],
+          "id": 1
+        }
+      ],
+      "likesCount": 0,
       "id": 4
-    },
-    {
-      "title": "test3",
-      "category": "test3",
-      "type": "Full-Time",
-      "description": "dasdasdas",
-      "id": 5
-    },
-    {
-      "title": "dsadasdasd",
-      "category": "dsadasdasd",
-      "type": "Part-Time",
-      "description": "dsadsadasd",
-      "id": 6
-    },
-    {
-      "title": "testtt",
-      "category": "test",
-      "type": "Part-Time",
-      "description": "test",
-      "id": 7
-    },
-    {
-      "title": "dsadasd",
-      "category": "dsadsad",
-      "type": "Part-Time",
-      "description": "dasdasd",
-      "id": 8
-    },
-    {
-      "title": "kkkk",
-      "category": "kkk",
-      "type": "Remote",
-      "description": "kkkk",
-      "id": 9
-    },
-    {
-      "title": "dads",
-      "category": "asdasd",
-      "type": "Part-Time",
-      "description": "asdasdasd",
-      "id": 10
     }
   ]
 }

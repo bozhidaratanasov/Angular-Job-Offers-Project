@@ -1,8 +1,11 @@
-<h3>All Offers</h3>
+<h2>All Offers</h2>
 
 <section>
   <app-offer-item *ngFor="let offer of offers"
                   [offer]="offer"
+                  [loggedUserId]="loggedUser.id!"
                   [userRole]="userRole"
+                  (appliedOffer)="onOfferApplied($event)"
+                  
   ></app-offer-item>
 </section>

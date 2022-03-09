@@ -12,13 +12,30 @@ import { Component, OnInit } from '@angular/core';
 export class OffersDashboardComponent implements OnInit {
 
   offers!: Offer[];
-  loggedUser!: User;
+  loggedUser: User = this.userService.getLoggedUser();
 
   constructor(private offerService: OfferService, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.loggedUser = this.userService.getLoggedUser()
-    this.offers = this.loggedUser.myOffers!;
+    //this.loggedUser = this.userService.getLoggedUser()
+    if (this.loggedUser.role === 'user')
+      this.loadAppliedOffers(this.loggedUser.id!);
+    else if (this.loggedUser.role === 'organization')
+      this.loadOrganizationOffers(this.loggedUser.id!);
+    
+  }
+
+
+  loadOrganizationOffers(id: number) {
+    this.offerService.getOffers$().subscribe(response => {
+      this.offers = response.filter(u => u.organizationId === id);
+    })
+  }
+
+  loadAppliedOffers(id: number) {
+    this.offerService.getOffers$().subscribe(response => {
+      this.offers = response.filter(u => u.appliedUsers.find(user => user.id === id));
+    })
   }
 
 }

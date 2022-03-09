@@ -32,9 +32,7 @@ export class RegisterComponent implements OnInit {
       email: this.formGroup.value.email,
       password: this.formGroup.value.password,
       role: this.checkboxChecked ? 'organization' : 'user',
-      myOffers: [],
       likedOffers: []
-
     }
 
     
