@@ -1,3 +1,5 @@
+import { OffersDashboardComponent } from './offers-dashboard/offers-dashboard.component';
+import { OfferFormComponent } from './offer-form/offer-form.component';
 import { OffersComponent } from './offers/offers.component';
 import { MainComponent } from './main/main.component';
 
@@ -12,6 +14,14 @@ const routes: Routes = [
       {
         path: 'offers',
         component: OffersComponent
+      },
+      {
+        path: 'offers/create',
+        component: OfferFormComponent
+      },
+      {
+        path: 'offers/dashboard',
+        component: OffersDashboardComponent
       },
       {
         path: '',

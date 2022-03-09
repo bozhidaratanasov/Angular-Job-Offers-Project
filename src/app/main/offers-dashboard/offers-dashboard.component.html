@@ -1,0 +1,16 @@
+<h1 *ngIf="loggedUser.role === 'user' && loggedUser.myOffers?.length === 0">
+  You haven't applied for any offers yet!
+</h1>
+<h1 *ngIf="loggedUser.role === 'organization' && loggedUser.myOffers?.length === 0">
+  You haven't created any offers yet!
+</h1>
+
+<button routerLink="/offers/create">
+  <span>+</span> Create New
+</button>
+
+<section>
+  <app-offer-item *ngFor="let offer of offers"
+                  [offer]="offer"
+  ></app-offer-item>
+</section>

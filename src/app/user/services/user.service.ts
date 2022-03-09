@@ -25,6 +25,12 @@ export class UserService {
     return this.http.post<User>(this.url, user, httpOptions);
   }
 
+  updateUser$(user: User): Observable<User> {
+    const url = `${this.url}/${user.id}`;
+
+    return this.http.put<User>(url, user);
+  }
+
   login$(data: Login): Observable<any> {
     return this.http.get<User[]>(this.url).pipe(
       map((response: User[]) => {

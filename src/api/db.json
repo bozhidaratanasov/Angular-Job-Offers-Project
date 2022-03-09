@@ -1,41 +1,48 @@
 {
   "users": [
     {
-      "name": "dasdasd",
-      "email": "dsdsdsd@abv.bg",
-      "password": "",
-      "role": "user",
-      "id": 1
-    },
-    {
-      "name": "dasdasd",
-      "email": "dsdsdsd@abv.bg",
-      "password": "",
-      "role": "user",
-      "id": 2
-    },
-    {
-      "name": "bozhidar",
-      "email": "bozhidar@abv.bg",
-      "password": "",
-      "role": "user",
-      "id": 3
-    },
-    {
-      "name": "bozhidar",
-      "email": "bozhidar@abv.bg",
+      "name": "Bozhidar",
+      "email": "b@abv.bg",
       "password": "mypass",
       "role": "user",
-      "id": 4
+      "myOffers": [],
+      "likedOffers": [],
+      "id": 1
     },
     {
       "name": "org",
       "email": "org@abv.bg",
       "password": "mypass",
       "role": "organization",
-      "id": 5
+      "myOffers": [
+        {
+          "title": "dsadasdasd",
+          "category": "dsadasdasd",
+          "type": "Part-Time",
+          "description": "dsadsadasd"
+        },
+        {
+          "title": "dsadasd",
+          "category": "dsadsad",
+          "type": "Part-Time",
+          "description": "dasdasd"
+        },
+        {
+          "title": "kkkk",
+          "category": "kkk",
+          "type": "Remote",
+          "description": "kkkk"
+        },
+        {
+          "title": "dads",
+          "category": "asdasd",
+          "type": "Part-Time",
+          "description": "asdasdasd"
+        }
+      ],
+      "likedOffers": [],
+      "id": 2
     }
-
   ],
   "offers": [
     {
@@ -93,6 +100,62 @@
       "category": "cat2",
       "type": "type2",
       "description": "desc2"
+    },
+    {
+      "title": "Test",
+      "category": "TestCat",
+      "type": "Part-Time",
+      "description": "dasdasdasdasd",
+      "id": 3
+    },
+    {
+      "title": "test2",
+      "category": "test2",
+      "type": "Part-Time",
+      "description": "test2",
+      "id": 4
+    },
+    {
+      "title": "test3",
+      "category": "test3",
+      "type": "Full-Time",
+      "description": "dasdasdas",
+      "id": 5
+    },
+    {
+      "title": "dsadasdasd",
+      "category": "dsadasdasd",
+      "type": "Part-Time",
+      "description": "dsadsadasd",
+      "id": 6
+    },
+    {
+      "title": "testtt",
+      "category": "test",
+      "type": "Part-Time",
+      "description": "test",
+      "id": 7
+    },
+    {
+      "title": "dsadasd",
+      "category": "dsadsad",
+      "type": "Part-Time",
+      "description": "dasdasd",
+      "id": 8
+    },
+    {
+      "title": "kkkk",
+      "category": "kkk",
+      "type": "Remote",
+      "description": "kkkk",
+      "id": 9
+    },
+    {
+      "title": "dads",
+      "category": "asdasd",
+      "type": "Part-Time",
+      "description": "asdasdasd",
+      "id": 10
     }
   ]
 }

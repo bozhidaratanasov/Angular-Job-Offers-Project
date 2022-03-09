@@ -1,0 +1,36 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <h1>Create An Offer</h1>
+  <div class="form-container">
+    <input class="text-input"
+           type="text"
+           placeholder="Title"
+           formControlName="title">
+  </div>
+  <div class="form-container">
+    <input class="text-input"
+           type="text"
+           placeholder="Category"
+           formControlName="category">
+  </div>
+  <div class="form-container">
+    <input list="types" 
+           class="text-input"
+           placeholder="Type"
+           formControlName="type">
+    <datalist id="types">
+      <option value="Part-Time"></option>
+      <option value="Full-Time"></option>
+      <option value="Remote"></option>
+    </datalist>
+  </div>
+  <div class="form-container">
+    <textarea class="text-input"
+           type="text"
+           placeholder="Description"
+           formControlName="description"></textarea>
+  </div>
+  <div>
+    <button type="submit">Save</button>
+  </div>
+</form>
+

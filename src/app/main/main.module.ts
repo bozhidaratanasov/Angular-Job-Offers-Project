@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { OfferItemComponent } from './offer-item/offer-item.component';
 import { OffersComponent } from './offers/offers.component';
+import { OfferFormComponent } from './offer-form/offer-form.component';
+import { OffersDashboardComponent } from './offers-dashboard/offers-dashboard.component';
 
 
 
@@ -13,7 +15,9 @@ import { OffersComponent } from './offers/offers.component';
   declarations: [
   
     OfferItemComponent,
-       OffersComponent
+       OffersComponent,
+       OfferFormComponent,
+       OffersDashboardComponent
   ],
   imports: [
     CommonModule,

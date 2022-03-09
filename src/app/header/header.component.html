@@ -19,10 +19,16 @@
         <div>Hello, {{ loggedUser.email}}</div>
         <ul>
           <li>
-            <a routerLink="login">Home</a>
+            <a routerLink="offers">Home</a>
           </li>
           <li>
             <a routerLink="register">Profile</a>
+          </li>
+          <li *ngIf="loggedUser.role === 'organization'">
+            <a routerLink="/offers/dashboard">My Offers</a>
+          </li>
+          <li *ngIf="loggedUser.role === 'user'">
+            <a routerLink="/offers/dashboard">Applied Offers</a>
           </li>
           <li>
             <a (click)="onLogout()" routerLink="login">Logout</a>

@@ -1,6 +1,7 @@
 import { User } from './../../user/models/user.model';
+
 export interface Offer {
-  id: number;
+  id?: number;
   title: string;
   description: string;
   likesCount?: number;
