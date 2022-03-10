@@ -21,6 +21,13 @@ h3, p {
   cursor: pointer;
 }
 
+.unlike-btn {
+  background-color: lightcoral;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .apply-btn, .like-btn {
   width: 5em;
 }

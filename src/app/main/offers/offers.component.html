@@ -5,7 +5,9 @@
                   [offer]="offer"
                   [loggedUserId]="loggedUser.id!"
                   [userRole]="userRole"
-                  (appliedOffer)="onOfferApplied($event)"
+                  (appliedOfferEmitter)="onOfferApplied($event)"
+                  (likedOfferEmitter)="onOfferLiked($event)"
+                  (unlikedOfferEmitter)="onOfferUnliked($event)"
                   
   ></app-offer-item>
 </section>

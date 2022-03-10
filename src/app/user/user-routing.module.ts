@@ -1,3 +1,5 @@
+import { EditComponent } from './edit/edit.component';
+import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthComponent } from './auth/auth.component';
@@ -16,6 +18,14 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'profile/edit',
+        component: EditComponent
       },
       {
         path: '',

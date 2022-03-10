@@ -1,122 +1,42 @@
 {
   "users": [
     {
-      "name": "Bozhidar",
-      "email": "b@abv.bg",
+      "name": "o",
+      "email": "o",
       "password": "mypass",
-      "role": "user",
-      "myOffers": [],
-      "likedOffers": [],
+      "role": "organization",
       "id": 1
     },
     {
-      "name": "org",
-      "email": "org@abv.bg",
-      "password": "mypass",
-      "role": "organization",
-      "myOffers": [],
-      "likedOffers": [],
-      "id": 2
-    },
-    {
-      "name": "k",
-      "email": "k@abv.bg",
+      "name": "b",
+      "email": "b",
       "password": "mypass",
       "role": "user",
-      "myOffers": [],
-      "likedOffers": [],
-      "id": 3
+      "id": 2
     }
   ],
   "offers": [
     {
-      "organizationId": 2,
-      "title": "kkk",
-      "category": "kk",
-      "type": "kk",
-      "description": "kk",
-      "appliedUsers": [
-        {
-          "name": "Bozhidar",
-          "email": "b@abv.bg",
-          "password": "mypass",
-          "role": "user",
-          "myOffers": [],
-          "likedOffers": [],
-          "id": 1
-        }
+      "organizationId": 1,
+      "title": "k",
+      "category": "k",
+      "type": "Part-Time",
+      "description": "k",
+      "appliedUsers": [],
+      "userWhoLiked": [
+        2
       ],
-      "likesCount": 0,
       "id": 1
     },
     {
-      "organizationId": 2,
-      "title": "jj",
-      "category": "jj",
-      "type": "jj",
-      "description": "jj",
-      "appliedUsers": [
-        {
-          "name": "Bozhidar",
-          "email": "b@abv.bg",
-          "password": "mypass",
-          "role": "user",
-          "myOffers": [],
-          "likedOffers": [],
-          "id": 1
-        }
-      ],
-      "likesCount": 0,
+      "organizationId": 1,
+      "title": "j",
+      "category": "j",
+      "type": "Part-Time",
+      "description": "j",
+      "appliedUsers": [],
+      "userWhoLiked": [],
       "id": 2
-    },
-    {
-      "organizationId": 2,
-      "title": "jj",
-      "category": "jj",
-      "type": "Part-Time",
-      "description": "jj",
-      "appliedUsers": [
-        {
-          "name": "Bozhidar",
-          "email": "b@abv.bg",
-          "password": "mypass",
-          "role": "user",
-          "myOffers": [],
-          "likedOffers": [],
-          "id": 1
-        }
-      ],
-      "likesCount": 0,
-      "id": 3
-    },
-    {
-      "organizationId": 2,
-      "title": "hh",
-      "category": "hh",
-      "type": "Part-Time",
-      "description": "hh",
-      "appliedUsers": [
-        {
-          "name": "Bozhidar",
-          "email": "b@abv.bg",
-          "password": "mypass",
-          "role": "user",
-          "myOffers": [],
-          "likedOffers": [],
-          "id": 1
-        },
-        {
-          "name": "Bozhidar",
-          "email": "b@abv.bg",
-          "password": "mypass",
-          "role": "user",
-          "myOffers": [],
-          "likedOffers": [],
-          "id": 1
-        }
-      ],
-      "likesCount": 0,
-      "id": 4
     }
   ]
 }

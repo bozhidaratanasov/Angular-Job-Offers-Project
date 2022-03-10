@@ -24,14 +24,14 @@ export class OffersComponent implements OnInit {
     this.userRole = this.loggedUser.role;
   }
 
-  getOffers() {
+  getOffers(): void {
     this.offerService.getOffers$().subscribe( response => {
       this.offers = response;
     })
   }
 
 
-  onOfferApplied(offer: Offer) {
+  onOfferApplied(offer: Offer): void {
    
     offer.appliedUsers.push(this.loggedUser);
     this.offerService.updateOffer$(offer).subscribe();
@@ -40,6 +40,29 @@ export class OffersComponent implements OnInit {
       icon: 'success',
       text: 'You have successfully applied!'
     });
+  }
+
+  onOfferLiked(offer: Offer): void {
+    // this.loggedUser.likedOffers?.push(offer);
+    // this.userService.updateUser$(this.loggedUser).subscribe();
+
+    // offer.likesCount += 1;
+    // this.offerService.updateOffer$(offer).subscribe();
+
+    offer.userWhoLiked.push(this.loggedUser.id!);
+    this.offerService.updateOffer$(offer).subscribe();
+    
+  }
+
+  onOfferUnliked(offer: Offer): void {
+    // this.loggedUser.likedOffers?.splice(this.loggedUser.likedOffers.indexOf(offer), 1);
+    // this.userService.updateUser$(this.loggedUser).subscribe();
+
+    // offer.likesCount -= 1;
+    // this.offerService.updateOffer$(offer).subscribe();
+
+    offer.userWhoLiked.splice(offer.userWhoLiked.indexOf(this.loggedUser.id!), 1);
+    this.offerService.updateOffer$(offer).subscribe();
   }
 
 }

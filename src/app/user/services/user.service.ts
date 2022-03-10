@@ -31,6 +31,18 @@ export class UserService {
     return this.http.put<User>(url, user);
   }
 
+  getUser$(id: number): Observable<User> {
+    const url = `${this.url}/${id}`;
+
+    return this.http.get<User>(url);
+  }
+
+  deleteUser$(id: number): Observable<void> {
+    const url = `${this.url}/${id}`;
+    
+    return this.http.delete<void>(url);
+  }
+
   login$(data: Login): Observable<any> {
     return this.http.get<User[]>(this.url).pipe(
       map((response: User[]) => {

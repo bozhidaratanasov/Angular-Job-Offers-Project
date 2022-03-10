@@ -7,6 +7,8 @@ import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './register/register.component';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -14,7 +16,9 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     RegisterComponent,
     AuthComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    EditComponent
   ],
   imports: [
     //BrowserModule,

@@ -5,8 +5,8 @@ export interface Offer {
   organizationId: number;
   title: string;
   description: string;
-  likesCount?: number;
   type: string;
   category: string;
   appliedUsers: User[]
+  userWhoLiked: number[]
 }

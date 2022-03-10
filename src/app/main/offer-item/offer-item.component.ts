@@ -12,20 +12,38 @@ export class OfferItemComponent implements OnInit {
   @Input() offer!: Offer;
   @Input() userRole!: string;
   @Input() loggedUserId!: number;
-  @Input() hasApplied!: boolean;
   appliedUser!: User;
+  hasApplied!: boolean;
+  isLiked!: boolean;
+  userWhoLikedId!: number;
 
-  @Output() appliedOffer: EventEmitter<Offer> = new EventEmitter();
+  @Output() appliedOfferEmitter: EventEmitter<Offer> = new EventEmitter();
+  @Output() likedOfferEmitter: EventEmitter<Offer> = new EventEmitter();
+  @Output() unlikedOfferEmitter: EventEmitter<Offer> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
     this.appliedUser = this.offer.appliedUsers.find(u => u.id === this.loggedUserId)!;
+    this.userWhoLikedId = this.offer.userWhoLiked.find(u => u === this.loggedUserId)!;
     this.hasApplied = false;
+    this.isLiked = false;
   }
   
   onApply(): void {
-    this.appliedOffer.emit(this.offer);
+    this.hasApplied = true;
+    this.appliedOfferEmitter.emit(this.offer);
+  }
+
+  onLike(): void {
+    this.isLiked = true;
+    this.likedOfferEmitter.emit(this.offer);
+  }
+
+  onUnlike(): void {
+    this.isLiked = false;
+    this.userWhoLikedId = undefined!;
+    this.unlikedOfferEmitter.emit(this.offer);
   }
 
 }

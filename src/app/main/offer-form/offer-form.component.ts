@@ -38,7 +38,7 @@ export class OfferFormComponent implements OnInit {
       type: this.formGroup.value.type,
       description: this.formGroup.value.description,
       appliedUsers: [],
-      likesCount: 0
+      userWhoLiked: []
     }
 
     this.offerService.createOffer$(offer).subscribe();
