@@ -2,7 +2,7 @@ import { Offer } from './../../main/models/offer.model';
 import { OfferService } from './../../main/services/offer.service';
 import { User } from './../models/user.model';
 import { UserService } from './../services/user.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -24,6 +24,18 @@ export class EditComponent implements OnInit {
               private router: Router
               ) { }
 
+  get nameFormControl(): FormControl {
+    return this.formGroup.get('name') as FormControl;
+  }
+
+  get emailFormControl(): FormControl {
+    return this.formGroup.get('email') as FormControl;
+  }
+
+  get passwordFormControl(): FormControl {
+    return this.formGroup.get('password') as FormControl;
+  }
+
   ngOnInit(): void {
     this.loggedUser = this.userService.getLoggedUser();
 
@@ -42,13 +54,20 @@ export class EditComponent implements OnInit {
   initializeForm(): void {
     this.formGroup = this.formBuilder.group({
       id: this.loggedUser.id,
-      name: this.user.name,
-      email: this.user.email,
-      password: this.user.password
+      name: [this.user.name, Validators.required],
+      email: [this.user.email, [Validators.required, Validators.email]],
+      password: [this.user.password, [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
+
+    if (this.formGroup.invalid) {
+      this.formGroup.markAllAsTouched();
+
+      return;
+    }
+
     const user: User = {
       id: this.loggedUser.id,
       name: this.formGroup.value.name,

@@ -48,24 +48,12 @@ export class OffersComponent implements OnInit {
   }
 
   onOfferLiked(offer: Offer): void {
-    // this.loggedUser.likedOffers?.push(offer);
-    // this.userService.updateUser$(this.loggedUser).subscribe();
-
-    // offer.likesCount += 1;
-    // this.offerService.updateOffer$(offer).subscribe();
-
     offer.userWhoLiked.push(this.loggedUser.id!);
     this.offerService.updateOffer$(offer).subscribe();
     
   }
 
   onOfferUnliked(offer: Offer): void {
-    // this.loggedUser.likedOffers?.splice(this.loggedUser.likedOffers.indexOf(offer), 1);
-    // this.userService.updateUser$(this.loggedUser).subscribe();
-
-    // offer.likesCount -= 1;
-    // this.offerService.updateOffer$(offer).subscribe();
-
     offer.userWhoLiked.splice(offer.userWhoLiked.indexOf(this.loggedUser.id!), 1);
     this.offerService.updateOffer$(offer).subscribe();
   }

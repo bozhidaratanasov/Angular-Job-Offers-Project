@@ -2,7 +2,7 @@ import  Swal  from 'sweetalert2';
 import { User } from './../models/user.model';
 import { UserService } from './../services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,10 +18,22 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
+  get nameFormControl(): FormControl {
+    return this.formGroup.get('name') as FormControl;
+  }
+
+  get emailFormControl(): FormControl {
+    return this.formGroup.get('email') as FormControl;
+  }
+
+  get passwordFormControl(): FormControl {
+    return this.formGroup.get('password') as FormControl;
+  }
+
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(5)]],
-      email: ['', [Validators.required, Validators.email, Validators.minLength(5)]],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       checkbox: ['']
     })
@@ -29,6 +41,13 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
+
+    if (this.formGroup.invalid) {
+      this.formGroup.markAllAsTouched();
+
+      return;
+    }
+
     const user: User = {
       name: this.formGroup.value.name,
       email: this.formGroup.value.email,

@@ -12,7 +12,6 @@
 <button routerLink="/offers/create" *ngIf="loggedUser.role === 'organization'">
   <span>+</span> Create New
 </button>
-<span hidden>{{changeOccured}}</span>
 <section>
   <app-offer-item *ngFor="let offer of offers"
                   [offer]="offer"

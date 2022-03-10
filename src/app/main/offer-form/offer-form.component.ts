@@ -1,7 +1,7 @@
 import { Offer } from './../models/offer.model';
 import { UserService } from './../../user/services/user.service';
 import { OfferService } from './../services/offer.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of, Subject, switchMap, takeUntil } from 'rxjs';
@@ -28,6 +28,22 @@ export class OfferFormComponent implements OnInit, OnDestroy {
 
                 }
                }
+
+  get titleFormControl(): FormControl {
+    return this.formGroup.get('title') as FormControl;
+  }
+
+  get categoryFormControl(): FormControl {
+    return this.formGroup.get('category') as FormControl;
+  }
+
+  get typeFormControl(): FormControl {
+    return this.formGroup.get('type') as FormControl;
+  }
+
+  get descriptionFormControl(): FormControl {
+    return this.formGroup.get('description') as FormControl;
+  }
 
   ngOnInit(): void {
     this.route.params.pipe(
@@ -60,14 +76,21 @@ export class OfferFormComponent implements OnInit, OnDestroy {
   initializeForm(): void {
     this.formGroup = this.formBuilder.group({
       id: this.offer.id,
-      title: this.offer.title,
-      category : this.offer.category,
-      type: this.offer.type,
-      description: this.offer.description
+      title: [this.offer.title, Validators.required],
+      category : [this.offer.category, Validators.required],
+      type: [this.offer.type, Validators.required],
+      description: [this.offer.description, Validators.required]
     });
   }
 
   onSubmit(): void {
+
+    if (this.formGroup.invalid) {
+      this.formGroup.markAllAsTouched();
+
+      return;
+    }
+
     let loggedUser = this.userService.getLoggedUser();
     
     const offer: Offer = {
@@ -83,8 +106,13 @@ export class OfferFormComponent implements OnInit, OnDestroy {
 
     let request$;
 
-    if(offer.id)
+    if(offer.id) {
+      offer.appliedUsers = this.offer.appliedUsers;
+      offer.userWhoLiked = this.offer.userWhoLiked;
+      if (this.offer.hiredUser)
+        offer.hiredUser = this.offer.hiredUser;
       request$ = this.offerService.updateOffer$(offer);
+    }
     else
       request$ = this.offerService.createOffer$(offer);
 

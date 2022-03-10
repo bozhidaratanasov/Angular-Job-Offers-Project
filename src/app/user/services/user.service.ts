@@ -31,6 +31,11 @@ export class UserService {
     return this.http.put<User>(url, user);
   }
 
+  getUsers$(): Observable<User[]> {
+    
+    return this.http.get<User[]>(this.url);
+  }
+
   getUser$(id: number): Observable<User> {
     const url = `${this.url}/${id}`;
 

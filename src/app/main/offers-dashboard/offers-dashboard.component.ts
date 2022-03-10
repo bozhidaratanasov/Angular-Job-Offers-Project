@@ -16,7 +16,7 @@ export class OffersDashboardComponent implements OnInit, OnDestroy{
   offers!: Offer[];
   loggedUser!: User;
   currentRoute!: string;
-  @Input() changeOccured!: string;
+  users!: User[];
   navigationSubscription: any;
 
   constructor(private offerService: OfferService, private userService: UserService, private router: Router) {

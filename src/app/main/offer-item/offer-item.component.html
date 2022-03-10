@@ -19,7 +19,11 @@
 
   </div>
   <div *ngIf="userRole === 'user' && currentRoute === '/offers/dashboard' ">
-    <p>Status: <span>{{ status }}</span></p> 
+    <p>Status: <span class="pending" *ngIf="status ==='Pending'">{{ status }}</span>
+               <span class="success" *ngIf="status === 'Accepted'">{{ status }}</span>
+               <span class="failure" *ngIf="status === 'Rejected'">{{ status }}</span>
+    
+    </p> 
   </div>
   <div *ngIf="userRole === 'organization' && currentRoute === '/offers/dashboard' && offer.hiredUser">
     <p>Hired user: {{ offer.hiredUser.name }}</p>

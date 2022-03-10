@@ -6,12 +6,22 @@
            type="text"
            placeholder="Title"
            formControlName="title">
+
+    <small class="error" *ngIf="titleFormControl.touched && titleFormControl.invalid && titleFormControl.errors?.['required']">
+      This field is required
+    </small>
+
   </div>
   <div class="form-container">
     <input class="text-input"
            type="text"
            placeholder="Category"
            formControlName="category">
+
+    <small class="error" *ngIf="categoryFormControl.touched && categoryFormControl.invalid && categoryFormControl.errors?.['required']">
+      This field is required
+    </small>
+
   </div>
   <div class="form-container">
     <input list="types" 
@@ -23,12 +33,21 @@
       <option value="Full-Time"></option>
       <option value="Remote"></option>
     </datalist>
+
+    <small class="error" *ngIf="typeFormControl.touched && typeFormControl.invalid && typeFormControl.errors?.['required']">
+      This field is required
+    </small>
+
   </div>
   <div class="form-container">
     <textarea class="text-input"
            type="text"
            placeholder="Description"
            formControlName="description"></textarea>
+
+    <small class="error" *ngIf="descriptionFormControl.touched && descriptionFormControl.invalid && descriptionFormControl.errors?.['required']">
+      This field is required
+    </small>
   </div>
   <div>
     <button type="submit">Save</button>

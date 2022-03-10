@@ -5,13 +5,23 @@
            type="email"
            placeholder="Email"
            formControlName="email">
+
+    <small class="error" *ngIf="emailFormControl.touched && emailFormControl.invalid && emailFormControl.errors?.['required']">
+           This field is required
+    </small>
   </div>
   <div class="form-container">
     <input class="text-input"
            type="password"
            placeholder="Password"
            formControlName="password">
+
+    <small class="error" *ngIf="passwordFormControl.touched && passwordFormControl.invalid && 
+           passwordFormControl.errors?.['required']">
+           This field is required
+    </small>
   </div>
+  <p class="error" *ngIf="invalidData">Wrong username or password</p>
   <div>
     <button type="submit">Login</button>
   </div>

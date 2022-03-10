@@ -5,18 +5,43 @@
            type="text"
            placeholder="Name"
            formControlName="name">
+
+
+    <small class="error" *ngIf="nameFormControl.touched && nameFormControl.invalid && nameFormControl.errors?.['required']">
+      This field is required
+    </small>
+
   </div>
   <div class="form-container">
     <input class="text-input"
            type="email"
            placeholder="Email"
            formControlName="email">
+
+    <small class="error" *ngIf="emailFormControl.touched && emailFormControl.invalid && emailFormControl.errors?.['required']">
+      This field is required
+    </small>
+
+    <small class="error" *ngIf="emailFormControl.touched && emailFormControl.invalid && emailFormControl.errors?.['email']">
+      Email is invalid
+    </small>
   </div>
   <div class="form-container">
     <input class="text-input"
            type="password"
            placeholder="Password"
            formControlName="password">
+
+    <small class="error" *ngIf="passwordFormControl.touched && passwordFormControl.invalid && 
+                          passwordFormControl.errors?.['required']">
+      This field is required
+    </small>
+
+    <small class="error" *ngIf="passwordFormControl.touched && passwordFormControl.invalid && 
+                          passwordFormControl.errors?.['minlength']">
+      Password should be atleast {{passwordFormControl.getError('minlength')['requiredLength']}} characters
+    </small>
+    
   </div>
   <div class="form-container">
     <input type="checkbox" id="orgCheckbox" formControlName="checkbox" [(ngModel)]="checkboxChecked">
