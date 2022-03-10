@@ -8,13 +8,19 @@
   <p>{{ offer.description }}</p>
   <p> Likes: {{offer.userWhoLiked.length}}</p>
 
-  <div *ngIf="userRole === 'user'">
+  <div *ngIf="userRole === 'user' && currentRoute !== '/offers/dashboard'">
     <p class="success" *ngIf="appliedUser || hasApplied">Already applied!</p>
-    <button class="apply-btn" (click)="onApply()" [disabled]="appliedUser || hasApplied">Apply</button>
-    <ng-container *ngIf="!userWhoLikedId">
+    <button class="apply-view-btn" (click)="onApply()" [disabled]="appliedUser || hasApplied">Apply</button>
 
-      <button class="like-btn" *ngIf="!isLiked" (click)="onLike()">Like</button>
+    <ng-container *ngIf="!userWhoLikedId">
+      <button class="like-edit-btn" *ngIf="!isLiked" (click)="onLike()">Like</button>
     </ng-container>
-    <button class="unlike-btn" *ngIf="isLiked || userWhoLikedId" (click)="onUnlike()">Unlike</button>
+    <button class="danger-btn" *ngIf="isLiked || userWhoLikedId" (click)="onUnlike()">Unlike</button>
+
+  </div>
+  <div *ngIf="userRole === 'organization' && currentRoute === '/offers/dashboard'">
+    <button class="apply-view-btn">View Applies</button>
+    <button class="like-edit-btn" [routerLink]="['/offers', 'edit', offer.id]">Edit</button>
+    <button class="danger-btn" (click)="onDelete()">Delete</button>
   </div>
 </article>

@@ -21,14 +21,19 @@ const routes: Routes = [
       },
       {
         path: 'offers/dashboard',
-        component: OffersDashboardComponent
+        component: OffersDashboardComponent,
+      },
+      {
+        path: 'offers/edit/:id',
+        component: OfferFormComponent
       },
       {
         path: '',
         pathMatch: 'full',
         component: OffersComponent
       }
-    ]
+    ],
+    runGuardsAndResolvers: 'always'
   }
       
 ];

@@ -12,6 +12,7 @@ export class OfferItemComponent implements OnInit {
   @Input() offer!: Offer;
   @Input() userRole!: string;
   @Input() loggedUserId!: number;
+  @Input() currentRoute!: string;
   appliedUser!: User;
   hasApplied!: boolean;
   isLiked!: boolean;
@@ -20,6 +21,7 @@ export class OfferItemComponent implements OnInit {
   @Output() appliedOfferEmitter: EventEmitter<Offer> = new EventEmitter();
   @Output() likedOfferEmitter: EventEmitter<Offer> = new EventEmitter();
   @Output() unlikedOfferEmitter: EventEmitter<Offer> = new EventEmitter();
+  @Output() deletedOfferEmitter: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
@@ -44,6 +46,10 @@ export class OfferItemComponent implements OnInit {
     this.isLiked = false;
     this.userWhoLikedId = undefined!;
     this.unlikedOfferEmitter.emit(this.offer);
+  }
+
+  onDelete(): void {
+    this.deletedOfferEmitter.emit(this.offer.id);
   }
 
 }

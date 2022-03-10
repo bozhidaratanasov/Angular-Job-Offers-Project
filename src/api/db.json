@@ -13,6 +13,13 @@
       "password": "mypass",
       "role": "user",
       "id": 2
+    },
+    {
+      "name": "o1",
+      "email": "o1",
+      "password": "o1",
+      "role": "organization",
+      "id": 3
     }
   ],
   "offers": [
@@ -23,20 +30,26 @@
       "type": "Part-Time",
       "description": "k",
       "appliedUsers": [],
-      "userWhoLiked": [
-        2
-      ],
+      "userWhoLiked": [],
       "id": 1
     },
     {
-      "organizationId": 1,
-      "title": "j",
-      "category": "j",
-      "type": "Part-Time",
-      "description": "j",
-      "appliedUsers": [],
+      "organizationId": 3,
+      "title": "o1of",
+      "category": "o1of",
+      "type": "Full-Time",
+      "description": "o1",
+      "appliedUsers": [
+        {
+          "name": "b",
+          "email": "b",
+          "password": "mypass",
+          "role": "user",
+          "id": 2
+        }
+      ],
       "userWhoLiked": [],
-      "id": 2
+      "id": 3
     }
   ]
 }

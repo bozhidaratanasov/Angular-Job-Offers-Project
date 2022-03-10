@@ -6,7 +6,7 @@ h3, p {
   margin-left: 10px;
 }
 
-.apply-btn {
+.apply-view-btn {
   margin-left: 10px;
   background-color: rgb(0, 200, 255);
   border: 1px solid white;
@@ -14,14 +14,14 @@ h3, p {
   cursor: pointer;
 }
 
-.like-btn {
+.like-edit-btn {
   background-color: lightgreen;
   border: 1px solid white;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.unlike-btn {
+.danger-btn {
   background-color: lightcoral;
   border: 1px solid white;
   border-radius: 10px;
