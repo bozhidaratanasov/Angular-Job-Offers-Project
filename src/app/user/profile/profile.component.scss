@@ -1,0 +1,23 @@
+section {
+  margin-top: 2em;
+  border: 3px dotted lightblue;
+  border-radius: 10px;
+}
+
+.container {
+  margin-left: 2em;
+}
+
+.edit-btn {
+  background-color: lightgreen;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.danger-btn {
+  background-color: lightcoral;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}

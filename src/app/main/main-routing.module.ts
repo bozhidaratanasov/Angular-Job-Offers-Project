@@ -1,3 +1,4 @@
+import { AppliedUsersComponent } from './applied-users/applied-users.component';
 import { OffersDashboardComponent } from './offers-dashboard/offers-dashboard.component';
 import { OfferFormComponent } from './offer-form/offer-form.component';
 import { OffersComponent } from './offers/offers.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'offers/edit/:id',
         component: OfferFormComponent
+      },
+      {
+        path: 'offers/applied/:id',
+        component: AppliedUsersComponent
       },
       {
         path: '',

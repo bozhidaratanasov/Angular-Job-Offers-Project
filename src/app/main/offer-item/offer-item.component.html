@@ -18,8 +18,15 @@
     <button class="danger-btn" *ngIf="isLiked || userWhoLikedId" (click)="onUnlike()">Unlike</button>
 
   </div>
+  <div *ngIf="userRole === 'user' && currentRoute === '/offers/dashboard' ">
+    <p>Status: <span>{{ status }}</span></p> 
+  </div>
+  <div *ngIf="userRole === 'organization' && currentRoute === '/offers/dashboard' && offer.hiredUser">
+    <p>Hired user: {{ offer.hiredUser.name }}</p>
+  </div>
+
   <div *ngIf="userRole === 'organization' && currentRoute === '/offers/dashboard'">
-    <button class="apply-view-btn">View Applies</button>
+    <button class="apply-view-btn" [routerLink]="['/offers', 'applied', offer.id]" *ngIf="!offer.hiredUser">View Applies</button>
     <button class="like-edit-btn" [routerLink]="['/offers', 'edit', offer.id]">Edit</button>
     <button class="danger-btn" (click)="onDelete()">Delete</button>
   </div>

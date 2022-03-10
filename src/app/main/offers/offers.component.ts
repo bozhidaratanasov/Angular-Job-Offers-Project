@@ -35,6 +35,11 @@ export class OffersComponent implements OnInit {
    
     offer.appliedUsers.push(this.loggedUser);
     this.offerService.updateOffer$(offer).subscribe();
+    if (this.loggedUser.offerStatus)
+      this.loggedUser.offerStatus[offer.id!] = 'Pending';
+
+    this.userService.storeUserData(this.loggedUser);
+    this.userService.updateUser$(this.loggedUser).subscribe();
     Swal.fire({
       title: 'Congratulations!',
       icon: 'success',

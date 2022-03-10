@@ -6,4 +6,6 @@ export interface User {
   email: string;
   password: string;
   role: string;
+  offerStatus?: {[k: number] : string};
+  isProcessed?: boolean;
 }

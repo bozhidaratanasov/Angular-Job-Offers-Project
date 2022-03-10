@@ -1,5 +1,6 @@
 <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-  <h1>Create An Offer</h1>
+  <h1 *ngIf="!offer.id">Create An Offer</h1>
+  <h1 *ngIf="offer.id">Edit Offer</h1>
   <div class="form-container">
     <input class="text-input"
            type="text"

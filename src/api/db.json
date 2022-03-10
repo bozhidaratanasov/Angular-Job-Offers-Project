@@ -1,55 +1,139 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "o",
       "email": "o",
-      "password": "mypass",
-      "role": "organization",
-      "id": 1
+      "password": "o",
+      "role": "organization"
     },
     {
-      "name": "b",
+      "id": 2,
+      "name": "Bozhidar Atanasov",
       "email": "b",
-      "password": "mypass",
+      "password": "b",
       "role": "user",
-      "id": 2
+      "offerStatus": {
+        "1": "Rejected",
+        "2": "Accepted",
+        "3": "Rejected"
+      }
     },
     {
-      "name": "o1",
-      "email": "o1",
-      "password": "o1",
-      "role": "organization",
+      "name": "f",
+      "email": "f",
+      "password": "f",
+      "role": "user",
+      "offerStatus": {
+        "3": "Accepted"
+      },
       "id": 3
     }
   ],
   "offers": [
     {
+      "id": 1,
       "organizationId": 1,
-      "title": "k",
-      "category": "k",
-      "type": "Part-Time",
-      "description": "k",
-      "appliedUsers": [],
-      "userWhoLiked": [],
-      "id": 1
-    },
-    {
-      "organizationId": 3,
-      "title": "o1of",
-      "category": "o1of",
+      "title": "kk",
+      "category": "kk",
       "type": "Full-Time",
-      "description": "o1",
+      "description": "kkk",
       "appliedUsers": [
         {
-          "name": "b",
+          "id": 2,
+          "name": "Bozhidar Atanasov",
           "email": "b",
-          "password": "mypass",
+          "password": "b",
           "role": "user",
-          "id": 2
+          "offerStatus": {
+            "1": "Rejected",
+            "2": "Accepted"
+          },
+          "isProcessed": true
+        }
+      ],
+      "userWhoLiked": []
+    },
+    {
+      "id": 2,
+      "organizationId": 1,
+      "title": "hh",
+      "category": "hh",
+      "type": "Remote",
+      "description": "hh",
+      "appliedUsers": [
+        {
+          "id": 2,
+          "name": "Bozhidar Atanasov",
+          "email": "b",
+          "password": "b",
+          "role": "user",
+          "offerStatus": {
+            "1": "Pending",
+            "2": "Accepted"
+          },
+          "isProcessed": true
         }
       ],
       "userWhoLiked": [],
-      "id": 3
+      "hiredUser": {
+        "id": 2,
+        "name": "Bozhidar Atanasov",
+        "email": "b",
+        "password": "b",
+        "role": "user",
+        "offerStatus": {
+          "1": "Pending",
+          "2": "Accepted"
+        },
+        "isProcessed": true
+      }
+    },
+    {
+      "id": 3,
+      "organizationId": 1,
+      "title": "asd",
+      "category": "asdasd",
+      "type": "Full-Time",
+      "description": "sad",
+      "appliedUsers": [
+        {
+          "id": 2,
+          "name": "Bozhidar Atanasov",
+          "email": "b",
+          "password": "b",
+          "role": "user",
+          "offerStatus": {
+            "1": "Rejected",
+            "2": "Accepted",
+            "3": "Rejected"
+          },
+          "isProcessed": true
+        },
+        {
+          "name": "f",
+          "email": "f",
+          "password": "f",
+          "role": "user",
+          "offerStatus": {
+            "3": "Accepted"
+          },
+          "id": 3,
+          "isProcessed": true
+        }
+      ],
+      "userWhoLiked": [],
+      "hiredUser": {
+        "name": "f",
+        "email": "f",
+        "password": "f",
+        "role": "user",
+        "offerStatus": {
+          "3": "Accepted"
+        },
+        "id": 3,
+        "isProcessed": true
+      }
     }
   ]
 }

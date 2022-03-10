@@ -1,12 +1,16 @@
-<h2>Profile Data</h2>
-<h3>Name</h3>
-<p>{{ currentUser.name }}</p>
-<h3>Email</h3>
-<p>{{ currentUser.email }}</p>
-<h3 *ngIf="currentUser.role === 'user'">Count Of Offers You Applied To</h3>
-<h3 *ngIf="currentUser.role === 'organization'">Count Of Created Offers</h3>
-<p>{{ offersCount }}</p>
-<div>
-  <button routerLink="/profile/edit">Edit Profile</button>
-  <button (click)="onDelete()">Delete Profile</button>
-</div>
+<section>
+  <div class="container">
+    <h2>Profile Data</h2>
+    <h3>Name:</h3>
+    <p>{{ loggedUser.name }}</p>
+    <h3>Email:</h3>
+    <p>{{ loggedUser.email }}</p>
+    <h3 *ngIf="loggedUser.role === 'user'">Count Of Offers You Applied To:</h3>
+    <h3 *ngIf="loggedUser.role === 'organization'">Count Of Created Offers:</h3>
+    <p>{{ offersCount }}</p>
+    <div>
+      <button class="edit-btn" routerLink="/profile/edit">Edit Profile</button>
+      <button class="danger-btn" (click)="onDelete()">Delete Profile</button>
+    </div>
+  </div>
+</section>

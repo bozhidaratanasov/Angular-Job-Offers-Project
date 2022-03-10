@@ -7,6 +7,7 @@ export interface Offer {
   description: string;
   type: string;
   category: string;
-  appliedUsers: User[]
-  userWhoLiked: number[]
+  appliedUsers: User[];
+  userWhoLiked: number[];
+  hiredUser?: User;
 }

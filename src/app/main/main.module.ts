@@ -7,6 +7,7 @@ import { OfferItemComponent } from './offer-item/offer-item.component';
 import { OffersComponent } from './offers/offers.component';
 import { OfferFormComponent } from './offer-form/offer-form.component';
 import { OffersDashboardComponent } from './offers-dashboard/offers-dashboard.component';
+import { AppliedUsersComponent } from './applied-users/applied-users.component';
 
 
 
@@ -17,7 +18,8 @@ import { OffersDashboardComponent } from './offers-dashboard/offers-dashboard.co
     OfferItemComponent,
        OffersComponent,
        OfferFormComponent,
-       OffersDashboardComponent
+       OffersDashboardComponent,
+       AppliedUsersComponent
   ],
   imports: [
     CommonModule,

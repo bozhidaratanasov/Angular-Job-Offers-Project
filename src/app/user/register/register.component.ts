@@ -37,6 +37,9 @@ export class RegisterComponent implements OnInit {
 
     }
 
+    if (!this.checkboxChecked)
+      user.offerStatus = {};
+
     this.userService.createUser$(user).subscribe();
     Swal.fire({
       title: 'Congratulations!',

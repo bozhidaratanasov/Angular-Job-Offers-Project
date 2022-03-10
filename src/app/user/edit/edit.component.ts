@@ -57,6 +57,9 @@ export class EditComponent implements OnInit {
       role: this.user.role
     };
 
+    if (this.user.role === 'user')
+      user.offerStatus = this.user.offerStatus;
+
     this.userService.storeUserData(user);
 
     this.userService.updateUser$(user).subscribe();
@@ -72,9 +75,15 @@ export class EditComponent implements OnInit {
             offer.appliedUsers.push(user);
             this.offerService.updateOffer$(offer).subscribe();
           }
+
+          
+          if (offer.hiredUser!.id === this.loggedUser.id) {
+            offer.hiredUser = user;
+            this.offerService.updateOffer$(offer).subscribe();
+          
+          }
         }
       }
-
     });
 
     this.router.navigate(['profile']);

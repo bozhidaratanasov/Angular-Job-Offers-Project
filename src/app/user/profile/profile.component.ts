@@ -14,23 +14,21 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
   loggedUserId!: number;
-  currentUser!: User;
   offers!: Offer[]
   offersCount!: number;
+  loggedUser!: User;
 
   constructor(private userService: UserService, private offerService: OfferService, private router: Router) { }
 
   ngOnInit(): void {
     this.loggedUserId = this.userService.getLoggedUser().id!;
-    this.userService.getUser$(this.loggedUserId!).subscribe(response => {
-      this.currentUser = response;
+    this.loggedUser = this.userService.getLoggedUser();
 
-      if (this.currentUser.role === 'user')
-        this.getUserOffersCount();
-
-      else
-        this.getOrganizationOffersCount();
-    });
+    if (this.loggedUser.role === 'user')
+      this.getUserOffersCount();
+    
+    else (this.loggedUser.role === 'organization')
+      this.getOrganizationOffersCount();
   }
 
   getUserOffersCount(): void {
