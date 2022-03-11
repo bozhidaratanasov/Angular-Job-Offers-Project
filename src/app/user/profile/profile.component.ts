@@ -24,10 +24,10 @@ export class ProfileComponent implements OnInit {
     this.loggedUserId = this.userService.getLoggedUser().id!;
     this.loggedUser = this.userService.getLoggedUser();
 
-    if (this.loggedUser.role === 'user')
+    if(this.loggedUser.role === 'user')
       this.getUserOffersCount();
     
-    else (this.loggedUser.role === 'organization')
+    else if(this.loggedUser.role === 'organization')
       this.getOrganizationOffersCount();
   }
 
@@ -55,13 +55,17 @@ export class ProfileComponent implements OnInit {
       confirmButtonText: 'Yes',
     }).then(({isConfirmed}) => {
       if (isConfirmed) {
-        
-        this.userService.deleteUser$(this.loggedUserId).subscribe();
-        this.userService.logout();
-        this.router.navigate(['login']);
+
+        this.offerService.getOffers$().subscribe( response => {
+          for (let offer of response) {
+            if (offer.organizationId === this.loggedUserId)
+              this.offerService.deleteOffer$(offer.id!).subscribe();
+          }
+        })
 
         if (this.offers) {
           for (let offer of this.offers) {
+
             for (let i = 0; i < offer.appliedUsers.length; i++) {
               if (offer.appliedUsers[i].id === this.loggedUserId)
               {
@@ -71,6 +75,20 @@ export class ProfileComponent implements OnInit {
             }
           }
         }
+        
+        this.userService.deleteUser$(this.loggedUserId).subscribe();
+        this.userService.logout();
+        this.router.navigate(['login']);
+
+        // if (this.offers) {
+        //   for (let offer of this.offers) {
+        //     if (offer.organizationId === this.loggedUserId)
+        //       this.offerService.deleteOffer$(offer.id!).subscribe();
+        //   }
+        // }
+        
+
+        
       }
     });
   }

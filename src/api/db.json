@@ -1,46 +1,8 @@
 {
   "users": [
-    {
-      "id": 1,
-      "name": "org",
-      "email": "o",
-      "password": "o",
-      "role": "organization"
-    },
-    {
-      "id": 2,
-      "name": "Bozhidar Atanasov",
-      "email": "b",
-      "password": "b",
-      "role": "user",
-      "offerStatus": {}
-    },
-    {
-      "name": "f",
-      "email": "f",
-      "password": "f",
-      "role": "user",
-      "offerStatus": {},
-      "id": 3
-    },
-    {
-      "name": "h",
-      "email": "h",
-      "password": "h",
-      "role": "user",
-      "offerStatus": {
-        "3": "Accepted"
-      },
-      "id": 4
-    },
-    {
-      "name": "dasdas",
-      "email": "dasdasdas@abv.bg",
-      "password": "mypash",
-      "role": "user",
-      "offerStatus": {},
-      "id": 5
-    }
+    
   ],
-  "offers": []
+  "offers": [
+    
+  ]
 }
