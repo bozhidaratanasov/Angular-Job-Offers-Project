@@ -57,7 +57,7 @@ export class OffersDashboardComponent implements OnInit, OnDestroy{
     })
   }
 
-  onDelete(id: number) {
+  onDelete(id: number): void {
     
     Swal.fire({
       title: 'Warning!',

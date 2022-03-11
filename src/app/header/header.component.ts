@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit, DoCheck{
     this.isLogged = this.userService.isLogged();
   }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     this.isLogged = this.userService.isLogged();
     this.loggedUser = this.userService.getLoggedUser();
   }

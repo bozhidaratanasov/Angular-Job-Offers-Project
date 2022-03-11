@@ -36,7 +36,7 @@ export class AppliedUsersComponent implements OnInit {
 
   }
 
-  onAccept(user: User) {
+  onAccept(user: User): void {
 
     this.userService.getUser$(user.id!).subscribe(response => {
       this.user = response;
@@ -52,7 +52,7 @@ export class AppliedUsersComponent implements OnInit {
     this.router.navigate(['/offers/dashboard']);
   }
 
-  onReject(user: User) {
+  onReject(user: User): void {
 
     this.userService.getUser$(user.id!).subscribe(response => {
       this.user = response;
